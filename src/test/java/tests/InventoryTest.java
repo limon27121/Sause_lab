@@ -36,4 +36,14 @@ public class InventoryTest extends  BaseClass{
         List<Double> sortedPrices = prices.stream().sorted().toList();
         Assert.assertEquals(prices, sortedPrices, "Products should be sorted low to high");
     }
+
+    @Test
+    public void testAddtoCartProducts(){
+        InventoryPage page=new InventoryPage(driver);
+        page.Add_to_cart();
+        Assert.assertTrue(page.Cart_container.isDisplayed()&&page.Remove_button.isDisplayed());
+
+
+
+    }
 }
