@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.security.PublicKey;
 import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -46,6 +47,13 @@ public class InventoryPage extends BasePage{
     @FindBy(xpath="//button[@id='remove-sauce-labs-backpack']")
     public WebElement Remove_button;
 
+    @FindBy(xpath="//button[@id='continue-shopping']")
+    public WebElement Continue_shopping_button;
+
+    @FindBy(xpath="//div[@class='header_secondary_container']")
+    public WebElement Header_Container;
+
+
 
     //*Actions*//
 
@@ -76,6 +84,16 @@ public class InventoryPage extends BasePage{
         Add_to_cart_button.click();
         Shopping_cart_icon.click();
     }
+
+    public void Remove_item(){
+        Remove_button.click();
+    }
+
+    public void Continue_shop(){
+        Continue_shopping_button.click();
+    }
+
+
 
 
 

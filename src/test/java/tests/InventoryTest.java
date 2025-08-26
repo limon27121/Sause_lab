@@ -43,7 +43,21 @@ public class InventoryTest extends  BaseClass{
         page.Add_to_cart();
         Assert.assertTrue(page.Cart_container.isDisplayed()&&page.Remove_button.isDisplayed());
 
+    }
 
+    @Test
+    public void testRemoveItemFromCart(){
+        InventoryPage page=new InventoryPage(driver);
+        testAddtoCartProducts();
+        page.Remove_item();
+        Assert.assertTrue(page.Continue_shopping_button.isDisplayed());
+    }
 
+    @Test
+    public void testContinueShop(){
+        InventoryPage page=new InventoryPage(driver);
+        testAddtoCartProducts();
+        page.Continue_shop();
+        Assert.assertTrue(page.Header_Container.isDisplayed());
     }
 }
